@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  vpn:
+    image: dep  # Replace 'dep' with the actual image name
+    cap_add:
+      - NET_ADMIN
+    networks:
+      internals:
+        aliases:
+          - vpn.example.in
+
+networks:
+  internals:
+    external: true
